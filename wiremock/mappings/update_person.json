@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "PUT",
+    "url": "/people/1",
+    "headers": {
+      "Authorization": {
+        "contains": "i am a session token"
+      }
+    },
+      "bodyPatterns": [
+        {
+          "equalToJson": "{\"firstName\":\"Bobby\"}"
+        }
+      ]
+    },
+    "response": {
+      "status": 200
+    }
+}
+

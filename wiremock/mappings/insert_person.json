@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/people",
+    "headers": {
+      "Authorization": {
+        "contains": "i am a session token"
+      },
+      "bodyPatterns": {
+        "equalToJson": "{\"firstName\":\"Lou\", \"lastName\":\"Smith\",\"dob\":\"1990-01-01\"}"
+      }
+    }
+  },
+    "response": {
+      "status": 200,
+      "body": "{\"id\":4}",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  }
+

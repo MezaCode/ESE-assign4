@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/people",
+    "headers": {
+      "Authorization": {
+        "contains": "i am a session token"
+      },
+      "bodyPatterns": {
+        "equalToJson": "{\"fstName\":\"Lou\", \"lastName\":\"Smith\",\"dob\":\"1990-01-01\"}"
+      }
+    }
+  },
+  "response": {
+    "status": 400
+  }
+}

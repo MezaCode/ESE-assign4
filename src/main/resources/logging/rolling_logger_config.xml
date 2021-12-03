@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="DEBUG" monitorInterval="5">
+    <Properties>
+        <Property name="log-path">logs</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="MyRollingFile" fileName="${log-path}/log4j2.log" filePattern="${log-path}/log4j2-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS} %c{1}: %m%n</pattern>
+            </PatternLayout>
+            <policies>
+                <SizeBasedTriggeringPolicy size="200 B" />
+            </policies>
+            <DefaultRolloverStrategy max="4" />
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug" additivity="false">
+            <AppenderRef ref="MyRollingFile"/>
+        </Root>
+    </Loggers>
+</configuration>
